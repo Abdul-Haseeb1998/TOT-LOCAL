@@ -217,7 +217,7 @@
         }
       }
     {% endstyle %}
-{%- render 'custom-section' -%}
+
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
@@ -316,5 +316,7 @@
 {%- endif -%}
 </script>
 <!-- PF EDT END -->
+   {{ 'custom-section.js' | asset_url | script_tag }}
+
 </body>
 </html>
