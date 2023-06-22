@@ -240,7 +240,7 @@
     "d55e2701-2792-4008-a023-4018098dcc95": {
       "type": "custom-section",
       "blocks": {
-        "d75fbd57-968f-41c0-a3b9-013b55ba40d1": {
+        "1a70068d-7e14-41c6-a8bd-c42054c42e34": {
           "type": "timer",
           "settings": {
             "countdown_date": "Dec 31, 2024",
@@ -249,7 +249,7 @@
         }
       },
       "block_order": [
-        "d75fbd57-968f-41c0-a3b9-013b55ba40d1"
+        "1a70068d-7e14-41c6-a8bd-c42054c42e34"
       ],
       "settings": {
         "full_width": true,
