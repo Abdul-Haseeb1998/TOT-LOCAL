@@ -300,7 +300,6 @@
   ]
 }
 {% endschema %}
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var countdownElements = document.querySelectorAll('.countdown');
@@ -323,16 +322,18 @@
           countdownElement.querySelector('.countdown-value.hours').textContent = hours;
           countdownElement.querySelector('.countdown-value.minutes').textContent = minutes;
           countdownElement.querySelector('.countdown-value.seconds').textContent = seconds;
-
-          setTimeout(updateCountdown, 1000); // Update the countdown every second
         } else {
+          clearInterval(countdownInterval);
           countdownElement.innerHTML = countdownText;
         }
       }
 
-      updateCountdown(); // Start the countdown immediately
+      updateCountdown(); // Initial update
+
+      var countdownInterval = setInterval(updateCountdown, 1000); // Update the countdown every second
     });
   });
 </script>
+
 
 
