@@ -48,19 +48,7 @@
           </p>
         </div>
       {% when 'timer' %}
-<div class="countdown" data-date="{{ block.settings.countdown_date | date: '%s' }}" data-text="{{ block.settings.countdown_text }}">
-  <h1 class="countdown-value days"></h1>
-  <h1 class="countdown-label">days</h1>
-  <h1 class="countdown-value hours"></h1>
-  <h1 class="countdown-label">hours</h1>
-  <h1 class="countdown-value minutes"></h1>
-  <h1 class="countdown-label">minutes</h1>
-  <h1 class="countdown-value seconds"></h1>
-  <h1 class="countdown-label">seconds</h1>
-</div>
-
-
-
+        <div class="countdown" data-date="{{ block.settings.countdown_date | date: '%s' }}" data-text="{{ block.settings.countdown_text }}"></div>
       {% when 'button' %}
         <a href="{{ block.settings.button_url }}" class="button" style="
           color: {{ block.settings.button_text_color }};
@@ -157,12 +145,6 @@
       "step": 1,
       "default": 10,
       "unit": "px"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Custom Section",
-      "category": "Custom"
     }
   ],
   "blocks": [
