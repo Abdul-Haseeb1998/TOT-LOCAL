@@ -240,13 +240,6 @@
     "1212ef7b-e9a3-464a-848a-679502c04749": {
       "type": "custom-section",
       "blocks": {
-        "3aa5262c-ae01-4cc1-b0d3-e757e6473c08": {
-          "type": "timer",
-          "settings": {
-            "countdown_date": "Dec 31, 2023",
-            "countdown_text": "Countdown has ended."
-          }
-        },
         "5f486dd9-bd62-4aa8-9695-db5255ea7d6f": {
           "type": "text",
           "settings": {
@@ -270,12 +263,19 @@
             "button_border_color": "#000000",
             "button_font_size": 16
           }
+        },
+        "3aa5262c-ae01-4cc1-b0d3-e757e6473c08": {
+          "type": "timer",
+          "settings": {
+            "countdown_date": "Dec 31, 2023",
+            "countdown_text": "Countdown has ended."
+          }
         }
       },
       "block_order": [
-        "3aa5262c-ae01-4cc1-b0d3-e757e6473c08",
         "5f486dd9-bd62-4aa8-9695-db5255ea7d6f",
-        "a4e48963-fc5a-4ab0-8379-6b023139c202"
+        "a4e48963-fc5a-4ab0-8379-6b023139c202",
+        "3aa5262c-ae01-4cc1-b0d3-e757e6473c08"
       ],
       "settings": {
         "full_width": true,
