@@ -1,18 +1,35 @@
-document.querySelectorAll('.countdown').forEach(function(countdown) {
-  var countdownDate = new Date(parseInt(countdown.dataset.date) * 1000);
-
-  setInterval(function() {
-    var now = new Date();
-    var distance = countdownDate - now;
-
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdown.querySelector('.days').textContent = days;
-    countdown.querySelector('.hours').textContent = hours;
-    countdown.querySelector('.minutes').textContent = minutes;
-    countdown.querySelector('.seconds').textContent = seconds;
-  }, 1000);
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all the countdown elements
+  var countdownElements = document.querySelectorAll('.countdown');
+  
+  countdownElements.forEach(function(countdownElement) {
+    // Get the date from the data attribute
+    var countdownDate = countdownElement.getAttribute('data-date');
+  
+    // Update the countdown every second
+    var countdownInterval = setInterval(function() {
+      var now = new Date().getTime();
+  
+      // Find the difference between now and the countdown date
+      var difference = countdownDate - now;
+  
+      // Time calculations for days, hours, minutes, and seconds
+      var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  
+      // Output the result in the countdown element
+      countdownElement.querySelector('.days').innerText = days;
+      countdownElement.querySelector('.hours').innerText = hours;
+      countdownElement.querySelector('.minutes').innerText = minutes;
+      countdownElement.querySelector('.seconds').innerText = seconds;
+  
+      // If the countdown is over, display some text 
+      if (difference < 0) {
+        clearInterval(countdownInterval);
+        countdownElement.innerHTML = countdownElement.getAttribute('data-text');
+      }
+    }, 1000);
+  });
 });
