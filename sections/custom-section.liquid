@@ -69,13 +69,218 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Custom Section",
-    "settings": [
-      // your settings here
-    ],
-    "blocks": [
-      // your blocks here
-    ]
-  }
+{
+  "name": "Custom Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Set to full width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_height_desktop",
+      "label": "Section height (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_height_mobile",
+      "label": "Section height (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "range",
+      "id": "blur_amount",
+      "label": "Image Blur",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border Radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section Padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "header",
+          "label": "Header"
+        },
+        {
+          "type": "richtext",
+          "id": "paragraph",
+          "label": "Paragraph"
+        },
+        {
+          "type": "color",
+          "id": "header_color",
+          "label": "Header Color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "paragraph_color",
+          "label": "Paragraph Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "header_font_size",
+          "label": "Header Font Size",
+          "min": 0,
+          "max": 72,
+          "step": 1,
+          "default": 36,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "paragraph_font_size",
+          "label": "Paragraph Font Size",
+          "min": 0,
+          "max": 36,
+          "step": 1,
+          "default": 18,
+          "unit": "px"
+        }
+      ]
+    },
+    {
+      "type": "timer",
+      "name": "Timer Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "countdown_date",
+          "label": "Set date"
+        },
+        {
+          "type": "text",
+          "id": "countdown_text",
+          "label": "Optional text when date is reached"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "range",
+          "id": "button_font_size",
+          "label": "Button Font Size",
+          "min": 0,
+          "max": 36,
+          "step": 1,
+          "default": 18,
+          "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button_background_color",
+          "label": "Button Background Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "button_border_radius",
+          "label": "Button Border Radius",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "button_border_width",
+          "label": "Button Border Width",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "button_border_color",
+          "label": "Button Border Color",
+          "default": "#000000"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
+
