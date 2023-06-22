@@ -278,9 +278,10 @@
         "291dacb6-41a4-4cd6-9835-d2cec639a36f"
       ],
       "settings": {
-        "full_width": false,
-        "section_height_desktop": 50,
+        "full_width": true,
+        "section_height_desktop": 100,
         "section_height_mobile": 50,
+        "desktop_image": "shopify:\/\/shop_images\/613861.png",
         "blur_amount": 0,
         "overlay_color": "#ffffff",
         "border_radius": 0,
