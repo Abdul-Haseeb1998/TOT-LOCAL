@@ -250,12 +250,12 @@
         "5f486dd9-bd62-4aa8-9695-db5255ea7d6f": {
           "type": "text",
           "settings": {
-            "header": "Your header text",
-            "header_color": "#000000",
+            "header": "50% off all suits and accessories",
+            "header_color": "#ffffff",
             "header_font_size": 36,
-            "paragraph": "Your paragraph text",
-            "paragraph_color": "#000000",
-            "paragraph_font_size": 16
+            "paragraph": "TONS OF TEXT BLALBLALBALBLABLALTONS OF TEXT BLALBLALBALBLABLAL TONS OF TEXT BLALBLALBALBLABLAL TONS OF TEXT BLALBLALBALBLABLAL TONS OF TEXT BLALBLALBALBLABLAL TONS OF TEXT BLALBLALBALBLABLAL TONS OF TEXT BLALBLALBALBLABLAL. TONS OF TEXT BLALBLALBALBLABLAL. TONS OF TEXT BLALBLALBALBLABLAL",
+            "paragraph_color": "#ffffff",
+            "paragraph_font_size": 13
           }
         },
         "a4e48963-fc5a-4ab0-8379-6b023139c202": {
