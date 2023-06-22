@@ -48,23 +48,15 @@
           </p>
         </div>
       {% when 'timer' %}
- <div class="countdown" data-date="{{ block.settings.countdown_date | date: '%s' }}" data-text="{{ block.settings.countdown_text }}">
-  <div class="countdown-unit">
-    <div class="countdown-value" data-unit="days"></div>
-    <div class="countdown-label">days</div>
-  </div>
-  <div class="countdown-unit">
-    <div class="countdown-value" data-unit="hours"></div>
-    <div class="countdown-label">hours</div>
-  </div>
-  <div class="countdown-unit">
-    <div class="countdown-value" data-unit="minutes"></div>
-    <div class="countdown-label">minutes</div>
-  </div>
-  <div class="countdown-unit">
-    <div class="countdown-value" data-unit="seconds"></div>
-    <div class="countdown-label">seconds</div>
-  </div>
+<div class="countdown" data-date="{{ block.settings.countdown_date | date: '%s' }}" data-text="{{ block.settings.countdown_text }}">
+  <h1 class="countdown-value" data-unit="days"></h1>
+  <h1 class="countdown-label">days</h1>
+  <h1 class="countdown-value" data-unit="hours"></h1>
+  <h1 class="countdown-label">hours</h1>
+  <h1 class="countdown-value" data-unit="minutes"></h1>
+  <h1 class="countdown-label">minutes</h1>
+  <h1 class="countdown-value" data-unit="seconds"></h1>
+  <h1 class="countdown-label">seconds</h1>
 </div>
 
 
