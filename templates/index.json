@@ -239,6 +239,18 @@
     },
     "c749d39d-2d4f-4e23-9066-b788d33de883": {
       "type": "custom-section",
+      "blocks": {
+        "0efb3024-c166-4604-a5df-8345f2b915d5": {
+          "type": "timer",
+          "settings": {
+            "countdown_date": "2026-01-01",
+            "countdown_text": "The time is up!"
+          }
+        }
+      },
+      "block_order": [
+        "0efb3024-c166-4604-a5df-8345f2b915d5"
+      ],
       "settings": {
         "full_width": true,
         "section_height_desktop": 500,
