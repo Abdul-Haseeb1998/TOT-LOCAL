@@ -256,8 +256,8 @@
         "section_height_desktop": 500,
         "section_height_mobile": 300,
         "desktop_image": "shopify:\/\/shop_images\/613861.png",
-        "blur_amount": 10,
-        "overlay_color": "#000000",
+        "blur_amount": 20,
+        "overlay_color": "#ffffff",
         "border_radius": 0,
         "background_color": "#ffffff",
         "section_padding": 10
