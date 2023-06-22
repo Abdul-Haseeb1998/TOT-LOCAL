@@ -1,6 +1,6 @@
  <script src="{{ 'custom-section.js' | asset_url }}" defer="defer"></script>
 
-{% liquid
+<!-- {% liquid
   assign full_width = section.settings.full_width
   assign desktop_image = section.settings.desktop_image
   assign mobile_image = section.settings.mobile_image
@@ -9,7 +9,7 @@
   assign border_radius = section.settings.border_radius
   assign background_color = section.settings.background_color
   assign section_padding = section.settings.section_padding
-%}
+%} -->
 
 <!-- <div style="
   width: {% if full_width %}100%{% else %}auto{% endif %};
@@ -35,6 +35,8 @@
     height: 100%;
     background-color: {{ overlay_color }};
   "></div> -->
+
+  
 <div class="page-width">
   {% for block in section.blocks %}
     {% case block.type %}
