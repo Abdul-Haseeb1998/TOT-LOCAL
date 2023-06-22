@@ -36,8 +36,6 @@
     background-color: {{ overlay_color }};
   "></div>
 
-  
-
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'text' %}
@@ -50,16 +48,7 @@
           </p>
         </div>
       {% when 'timer' %}
-        <div class="countdown">
-          <h1 class="countdown-value js-timer-days"></h1>
-          <h1 class="countdown-label">Days</h1>
-          <h1 class="countdown-value js-timer-hours"></h1>
-          <h1 class="countdown-label">Hours</h1>
-          <h1 class="countdown-value js-timer-minutes"></h1>
-          <h1 class="countdown-label">Minutes</h1>
-          <h1 class="countdown-value js-timer-seconds"></h1>
-          <h1 class="countdown-label">Seconds</h1>
-        </div>
+        <div class="countdown" data-date="{{ block.settings.countdown_date | date: '%s' }}" data-text="{{ block.settings.countdown_text }}"></div>
       {% when 'button' %}
         <a href="{{ block.settings.button_url }}" class="button" style="
           color: {{ block.settings.button_text_color }};
@@ -302,47 +291,41 @@
   ]
 }
 {% endschema %}
+
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Get all the countdown elements
-    var countdownElements = document.querySelectorAll('.countdown');
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all the countdown elements
+  var countdownElements = document.querySelectorAll('.countdown');
 
-    countdownElements.forEach(function(countdownElement) {
-      // Get the date from the data attribute
-      var countdownDate = countdownElement.getAttribute('data-date');
-      var countdownText = countdownElement.getAttribute('data-text');
+  countdownElements.forEach(function(countdownElement) {
+    // Get the date from the data attribute
+    var countdownDate = countdownElement.getAttribute('data-date');
 
-      // Update the countdown every second
-      var countdownInterval = setInterval(function() {
-        var now = new Date().getTime();
+    // Update the countdown every second
+    var countdownInterval = setInterval(function() {
+      var now = new Date().getTime();
 
-        // Find the difference between now and the countdown date
-        var difference = countdownDate - now;
+      // Find the difference between now and the countdown date
+      var difference = countdownDate - now;
 
-        // Time calculations for days, hours, minutes, and seconds
-        var days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+      // Time calculations for days, hours, minutes, and seconds
+      var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-        // Format the countdown values with leading zeros if needed
-        days = String(days).padStart(2, '0');
-        hours = String(hours).padStart(2, '0');
-        minutes = String(minutes).padStart(2, '0');
-        seconds = String(seconds).padStart(2, '0');
+      // Output the result in the countdown element
+      countdownElement.querySelector('.js-timer-days').innerText = days;
+      countdownElement.querySelector('.js-timer-hours').innerText = hours;
+      countdownElement.querySelector('.js-timer-minutes').innerText = minutes;
+      countdownElement.querySelector('.js-timer-seconds').innerText = seconds;
 
-        // Output the result in the countdown element
-        countdownElement.querySelector('.countdown-value.days').innerText = days;
-        countdownElement.querySelector('.countdown-value.hours').innerText = hours;
-        countdownElement.querySelector('.countdown-value.minutes').innerText = minutes;
-        countdownElement.querySelector('.countdown-value.seconds').innerText = seconds;
-
-        // If the countdown is over, display the countdown text
-        if (difference < 0) {
-          clearInterval(countdownInterval);
-          countdownElement.innerHTML = countdownText;
-        }
-      }, 1000);
-    });
+      // If the countdown is over, display some text
+      if (difference < 0) {
+        clearInterval(countdownInterval);
+        countdownElement.innerHTML = countdownElement.getAttribute('data-text');
+      }
+    }, 1000);
   });
+});
 </script>
