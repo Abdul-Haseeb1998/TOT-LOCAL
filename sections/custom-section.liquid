@@ -1,7 +1,7 @@
-{% liquid
+ <script src="{{ 'custom-section.js' | asset_url }}" defer="defer"></script>    
+
+<!-- {% liquid
   assign full_width = section.settings.full_width
-  assign section_height_desktop = section.settings.section_height_desktop
-  assign section_height_mobile = section.settings.section_height_mobile
   assign desktop_image = section.settings.desktop_image
   assign mobile_image = section.settings.mobile_image
   assign blur_amount = section.settings.blur_amount
@@ -9,9 +9,9 @@
   assign border_radius = section.settings.border_radius
   assign background_color = section.settings.background_color
   assign section_padding = section.settings.section_padding
-%}
+%} -->
 
-<div style="
+<!-- <div style="
   width: {% if full_width %}100%{% else %}auto{% endif %};
   height: {{ section_height_desktop }}px;
   background-image: url({{ desktop_image | img_url: 'master' }});
@@ -34,8 +34,10 @@
     width: 100%;
     height: 100%;
     background-color: {{ overlay_color }};
-  "></div>
+  "></div> -->
 
+  
+<div class="page-width">
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'text' %}
@@ -48,7 +50,7 @@
           </p>
         </div>
       {% when 'timer' %}
-        <div class="countdown" data-date="{{ block.settings.countdown_date | date: '%s' }}" data-text="{{ block.settings.countdown_text }}">
+        <div class="countdown" data-date="{{ block.settings.countdown_date | date: "%s" }}">
           <span class="days"></span> days
           <span class="hours"></span> hours
           <span class="minutes"></span> minutes
@@ -71,50 +73,50 @@
 {% schema %}
 {
   "name": "Custom Section",
-  "class": "custom-section",
+  
   "settings": [
     {
       "type": "checkbox",
       "id": "full_width",
-      "label": "Full width",
-      "default": true
+      "label": "Set to full width",
+      "default": false
     },
     {
       "type": "range",
       "id": "section_height_desktop",
-      "label": "Section height (desktop)",
-      "min": 100,
-      "max": 1000,
-      "step": 10,
-      "default": 500,
-      "unit": "px"
+      "label": "Section height (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 50,
+      "unit": "%"
     },
     {
       "type": "range",
       "id": "section_height_mobile",
-      "label": "Section height (mobile)",
-      "min": 100,
-      "max": 1000,
-      "step": 10,
-      "default": 300,
-      "unit": "px"
+      "label": "Section height (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 50,
+      "unit": "%"
     },
     {
       "type": "image_picker",
       "id": "desktop_image",
-      "label": "Image (desktop)"
+      "label": "Desktop Image"
     },
     {
       "type": "image_picker",
       "id": "mobile_image",
-      "label": "Image (mobile)"
+      "label": "Mobile Image"
     },
     {
       "type": "range",
       "id": "blur_amount",
-      "label": "Image blur",
+      "label": "Image Blur",
       "min": 0,
-      "max": 20,
+      "max": 100,
       "step": 1,
       "default": 0,
       "unit": "px"
@@ -122,15 +124,15 @@
     {
       "type": "color",
       "id": "overlay_color",
-      "label": "Overlay color",
-      "default": "#000000"
+      "label": "Overlay Color",
+      "default": "#ffffff"
     },
     {
       "type": "range",
       "id": "border_radius",
-      "label": "Border radius",
+      "label": "Border Radius",
       "min": 0,
-      "max": 50,
+      "max": 100,
       "step": 1,
       "default": 0,
       "unit": "px"
@@ -138,121 +140,128 @@
     {
       "type": "color",
       "id": "background_color",
-      "label": "Background color",
+      "label": "Background Color",
       "default": "#ffffff"
     },
     {
       "type": "range",
       "id": "section_padding",
-      "label": "Section padding",
+      "label": "Section Padding",
       "min": 0,
       "max": 100,
       "step": 1,
-      "default": 10,
+      "default": 0,
       "unit": "px"
     }
   ],
   "blocks": [
     {
       "type": "text",
-      "name": "Text block",
+      "name": "Text Block",
       "settings": [
         {
-          "type": "text",
+          "type": "richtext",
           "id": "header",
-          "label": "Header text",
-          "default": "Your header text"
+          "label": "Header"
+        },
+        {
+          "type": "richtext",
+          "id": "paragraph",
+          "label": "Paragraph"
         },
         {
           "type": "color",
           "id": "header_color",
-          "label": "Header color",
+          "label": "Header Color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "paragraph_color",
+          "label": "Paragraph Color",
           "default": "#000000"
         },
         {
           "type": "range",
           "id": "header_font_size",
-          "label": "Header font size",
-          "min": 10,
+          "label": "Header Font Size",
+          "min": 0,
           "max": 72,
           "step": 1,
           "default": 36,
           "unit": "px"
         },
         {
-          "type": "text",
-          "id": "paragraph",
-          "label": "Paragraph text",
-          "default": "Your paragraph text"
-        },
-        {
-          "type": "color",
-          "id": "paragraph_color",
-          "label": "Paragraph color",
-          "default": "#000000"
-        },
-        {
           "type": "range",
           "id": "paragraph_font_size",
-          "label": "Paragraph font size",
-          "min": 10,
+          "label": "Paragraph Font Size",
+          "min": 0,
           "max": 36,
           "step": 1,
-          "default": 16,
+          "default": 18,
           "unit": "px"
         }
       ]
     },
     {
       "type": "timer",
-      "name": "Timer block",
+      "name": "Timer Block",
       "settings": [
+        
         {
-          "type": "text",
-          "id": "countdown_date",
-          "label": "Countdown date",
-          "default": "2024-01-01"
+            "type": "text",
+            "id": "countdown_date",
+            "label": "Choose date",
+            "default": "12-24-2022",
+            "info": "e.g. mm-dd-yyyy"
         },
         {
           "type": "text",
           "id": "countdown_text",
-          "label": "Text when date is reached",
-          "default": "The time is up!"
+          "label": "Optional text when date is reached"
         }
       ]
     },
     {
       "type": "button",
-      "name": "Button block",
+      "name": "Button Block",
       "settings": [
         {
           "type": "text",
           "id": "button_text",
-          "label": "Button text",
-          "default": "Click me"
+          "label": "Button Text"
         },
         {
           "type": "url",
           "id": "button_url",
-          "label": "Button URL",
-          "default": "#"
+          "label": "Button URL"
+        },
+        {
+          "type": "range",
+          "id": "button_font_size",
+          "label": "Button Font Size",
+          "min": 0,
+          "max": 36,
+          "step": 1,
+          "default": 18,
+          "unit": "px"
         },
         {
           "type": "color",
           "id": "button_text_color",
-          "label": "Button text color",
+          "label": "Button Text Color",
           "default": "#ffffff"
         },
         {
           "type": "color",
           "id": "button_background_color",
-          "label": "Button background color",
+          "label": "Button Background Color",
           "default": "#000000"
         },
         {
           "type": "range",
           "id": "button_border_radius",
-          "label": "Button border radius",
+          "label": "Button Border Radius",
           "min": 0,
           "max": 50,
           "step": 1,
@@ -262,9 +271,9 @@
         {
           "type": "range",
           "id": "button_border_width",
-          "label": "Button border width",
+          "label": "Button Border Width",
           "min": 0,
-          "max": 10,
+          "max": 20,
           "step": 1,
           "default": 0,
           "unit": "px"
@@ -272,21 +281,18 @@
         {
           "type": "color",
           "id": "button_border_color",
-          "label": "Button border color",
+          "label": "Button Border Color",
           "default": "#000000"
-        },
-        {
-          "type": "range",
-          "id": "button_font_size",
-          "label": "Button font size",
-          "min": 10,
-          "max": 36,
-          "step": 1,
-          "default": 16,
-          "unit": "px"
         }
       ]
+    }
+  ],
+   "presets": [
+    {
+      "name": "custom section",
+      "category": "Custom"
     }
   ]
 }
 {% endschema %}
+
