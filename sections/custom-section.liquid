@@ -18,6 +18,7 @@
   background-color: {{ background_color }};
   padding: {{ section_padding }}px;
   border-radius: {{ border_radius }}px;
+  text-align: center;
   overflow: hidden;
 ">
   <div style="
@@ -48,7 +49,7 @@
           </p>
         </div>
       {% when 'timer' %}
-        <div style="text-align: center;"; class="countdown" data-date="{{ block.settings.countdown_date | date: '%s' }}" data-text="{{ block.settings.countdown_text }}">
+        <div  class="countdown" data-date="{{ block.settings.countdown_date | date: '%s' }}" data-text="{{ block.settings.countdown_text }}">
           <h1 style="display:inline-block"; class="countdown-value js-timer-days"></h1>
           <p style="display:inline-block"; class="countdown-label">days</p>
           <h1 style="display:inline-block";  class="countdown-value js-timer-hours"></h1>
