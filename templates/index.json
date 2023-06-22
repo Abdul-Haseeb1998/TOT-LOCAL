@@ -243,7 +243,7 @@
         "ac56840d-270e-44fa-bcf9-1afb0a0293f3": {
           "type": "timer",
           "settings": {
-            "countdown_date": "Dec 31, 2022",
+            "countdown_date": "Dec 31, 2024",
             "countdown_text": "Countdown has ended."
           }
         }
