@@ -236,6 +236,31 @@
         "padding_top": 32,
         "padding_bottom": 52
       }
+    },
+    "0d7cd1ac-8b5f-4641-a187-4c1146328eb9": {
+      "type": "custom-section",
+      "blocks": {
+        "baa9a688-0314-40c8-a2cc-313caf0e149a": {
+          "type": "timer",
+          "settings": {
+            "countdown_date": "2024-01-01",
+            "countdown_text": "The time is up!"
+          }
+        }
+      },
+      "block_order": [
+        "baa9a688-0314-40c8-a2cc-313caf0e149a"
+      ],
+      "settings": {
+        "full_width": true,
+        "section_height_desktop": 500,
+        "section_height_mobile": 300,
+        "blur_amount": 0,
+        "overlay_color": "#000000",
+        "border_radius": 0,
+        "background_color": "#ffffff",
+        "section_padding": 10
+      }
     }
   },
   "order": [
@@ -245,6 +270,7 @@
     "image_banner",
     "127f80e8-25b7-4874-8312-7ba8e8cbe027",
     "7b7e4d92-81be-424c-ad07-c444ddf80463",
-    "357446d6-5b6a-4394-ac18-38d89c8ed430"
+    "357446d6-5b6a-4394-ac18-38d89c8ed430",
+    "0d7cd1ac-8b5f-4641-a187-4c1146328eb9"
   ]
 }
