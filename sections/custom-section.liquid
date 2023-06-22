@@ -221,7 +221,7 @@
           "type": "text",
           "id": "countdown_date",
           "label": "Countdown Date",
-          "default": "Dec 31, 2022"
+          "default": "Dec 31, 2023"
         },
         {
           "type": "text",
@@ -325,7 +325,7 @@
   
         if (difference < 0) {
           clearInterval(countdownInterval);
-          countdownElement.style.display = 'block';
+          countdownElement.style.display = 'none';
         }
       }, 1000);
     });
