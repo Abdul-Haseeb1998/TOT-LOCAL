@@ -278,7 +278,7 @@
         "24d7b9cb-169b-4ebc-a0dc-8ef80ef925bd"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "section_height_desktop": 100,
         "section_height_mobile": 100,
         "desktop_image": "shopify:\/\/shop_images\/613861.png",
