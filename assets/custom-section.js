@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
       var seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
       // Output the result in the countdown element
-      countdownElement.querySelector('.days').innerText = days;
-      countdownElement.querySelector('.hours').innerText = hours;
-      countdownElement.querySelector('.minutes').innerText = minutes;
-      countdownElement.querySelector('.seconds').innerText = seconds;
+      countdownElement.querySelector('[data-unit="days"]').innerText = days;
+      countdownElement.querySelector('[data-unit="hours"]').innerText = hours;
+      countdownElement.querySelector('[data-unit="minutes"]').innerText = minutes;
+      countdownElement.querySelector('[data-unit="seconds"]').innerText = seconds;
     }, 1000);
   });
 });
