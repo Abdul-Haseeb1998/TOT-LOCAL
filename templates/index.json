@@ -280,7 +280,7 @@
       "settings": {
         "full_width": true,
         "section_height_desktop": 100,
-        "section_height_mobile": 50,
+        "section_height_mobile": 100,
         "desktop_image": "shopify:\/\/shop_images\/613861.png",
         "blur_amount": 0,
         "overlay_color": "#ffffff",
