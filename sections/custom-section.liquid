@@ -51,10 +51,10 @@
         </div>
       {% when 'timer' %}
         <div class="countdown" data-date="{{ block.settings.countdown_date | date: "%m-%d-%Y" }}">
-<!--           <span class="days"></span> days
+          <span class="days"></span> days
           <span class="hours"></span> hours
           <span class="minutes"></span> minutes
-          <span class="seconds"></span> seconds -->
+          <span class="seconds"></span> seconds
         </div>
       {% when 'button' %}
         <a href="{{ block.settings.button_url }}" class="button" style="
