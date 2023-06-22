@@ -55,7 +55,7 @@
         </div>
       {% when 'timer' %}
         <div  class="countdown" data-date="{{ block.settings.countdown_date | date: '%s' }}" data-text="{{ block.settings.countdown_text }}">
-        <h1 style="display:inline-block; color:white; border-right: 2px solid white;" class="countdown-value js-timer-days"></h1>
+        <h1 style="display:inline-block; color:white; border-right: 2px solid white; padding-right:5px;" class="countdown-value js-timer-days"></h1>
 
           <p style="display:inline-block; color:white"; class="countdown-label">days</p>
           <h1 style="display:inline-block; color:white";  class="countdown-value js-timer-hours"></h1>
