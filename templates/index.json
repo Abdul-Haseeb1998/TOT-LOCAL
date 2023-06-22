@@ -240,16 +240,16 @@
     "d55e2701-2792-4008-a023-4018098dcc95": {
       "type": "custom-section",
       "blocks": {
-        "e5c77df2-6a86-4bae-95a0-8efaefe6a5c7": {
+        "d75fbd57-968f-41c0-a3b9-013b55ba40d1": {
           "type": "timer",
           "settings": {
-            "countdown_date": "Dec 31, 2022",
+            "countdown_date": "Dec 31, 2024",
             "countdown_text": "Countdown has ended."
           }
         }
       },
       "block_order": [
-        "e5c77df2-6a86-4bae-95a0-8efaefe6a5c7"
+        "d75fbd57-968f-41c0-a3b9-013b55ba40d1"
       ],
       "settings": {
         "full_width": true,
