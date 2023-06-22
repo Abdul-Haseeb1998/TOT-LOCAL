@@ -309,7 +309,7 @@
       var countdownDate = new Date(countdownElement.getAttribute('data-date')).getTime();
       var countdownText = countdownElement.getAttribute('data-text');
 
-      var countdownInterval = setInterval(function() {
+      function updateCountdown() {
         var now = new Date().getTime();
         var difference = countdownDate - now;
 
@@ -319,15 +319,18 @@
           var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
           var seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-          countdownElement.querySelector('.countdown-value.days').innerText = days;
-          countdownElement.querySelector('.countdown-value.hours').innerText = hours;
-          countdownElement.querySelector('.countdown-value.minutes').innerText = minutes;
-          countdownElement.querySelector('.countdown-value.seconds').innerText = seconds;
+          countdownElement.querySelector('.countdown-value.days').textContent = days;
+          countdownElement.querySelector('.countdown-value.hours').textContent = hours;
+          countdownElement.querySelector('.countdown-value.minutes').textContent = minutes;
+          countdownElement.querySelector('.countdown-value.seconds').textContent = seconds;
+
+          setTimeout(updateCountdown, 1000); // Update the countdown every second
         } else {
-          clearInterval(countdownInterval);
           countdownElement.innerHTML = countdownText;
         }
-      }, 1000);
+      }
+
+      updateCountdown(); // Start the countdown immediately
     });
   });
 </script>
