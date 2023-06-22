@@ -1,7 +1,6 @@
 {% liquid
   assign full_width = section.settings.full_width
-  assign section_height_desktop = section.settings.section_height_desktop
-  assign section_height_mobile = section.settings.section_height_mobile
+ 
   assign desktop_image = section.settings.desktop_image
   assign mobile_image = section.settings.mobile_image
   assign blur_amount = section.settings.blur_amount
@@ -71,6 +70,7 @@
 {% schema %}
 {
   "name": "Custom Section",
+  
   "settings": [
     {
       "type": "checkbox",
@@ -78,26 +78,7 @@
       "label": "Set to full width",
       "default": false
     },
-    {
-      "type": "range",
-      "id": "section_height_desktop",
-      "label": "Section height (Desktop)",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "default": 50,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "section_height_mobile",
-      "label": "Section height (Mobile)",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "default": 50,
-      "unit": "px"
-    },
+    
     {
       "type": "image_picker",
       "id": "desktop_image",
