@@ -267,8 +267,8 @@
         "24d7b9cb-169b-4ebc-a0dc-8ef80ef925bd": {
           "type": "timer",
           "settings": {
-            "countdown_date": "2024-01-01",
-            "countdown_text": ""
+            "countdown_date": "",
+            "countdown_text": "2024-01-01"
           }
         }
       },
