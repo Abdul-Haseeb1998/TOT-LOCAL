@@ -236,31 +236,6 @@
         "padding_top": 32,
         "padding_bottom": 52
       }
-    },
-    "e3c0d554-c4b5-4f6a-83b2-a2349e18597b": {
-      "type": "custom-section",
-      "blocks": {
-        "c6ccfdbf-5f72-4f09-aa7d-60acdaa839f2": {
-          "type": "timer",
-          "settings": {
-            "countdown_date": "Dec 31, 2023",
-            "countdown_text": "Countdown has ended."
-          }
-        }
-      },
-      "block_order": [
-        "c6ccfdbf-5f72-4f09-aa7d-60acdaa839f2"
-      ],
-      "settings": {
-        "full_width": true,
-        "section_height_desktop": 500,
-        "section_height_mobile": 300,
-        "blur_amount": 0,
-        "overlay_color": "#000000",
-        "border_radius": 0,
-        "background_color": "#ffffff",
-        "section_padding": 10
-      }
     }
   },
   "order": [
@@ -270,7 +245,6 @@
     "image_banner",
     "127f80e8-25b7-4874-8312-7ba8e8cbe027",
     "7b7e4d92-81be-424c-ad07-c444ddf80463",
-    "357446d6-5b6a-4394-ac18-38d89c8ed430",
-    "e3c0d554-c4b5-4f6a-83b2-a2349e18597b"
+    "357446d6-5b6a-4394-ac18-38d89c8ed430"
   ]
 }
