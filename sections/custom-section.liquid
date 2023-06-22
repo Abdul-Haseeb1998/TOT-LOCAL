@@ -12,7 +12,7 @@
 %}
 
 <div style="
-  width: {% if full_width %}80%{% else %}auto{% endif %};
+  width: {% if full_width %}100%{% else %}auto{% endif %};
   height: {{ section_height_desktop }}px;
   background-image: url({{ desktop_image | img_url: 'master' }});
   background-color: {{ background_color }};
@@ -28,6 +28,7 @@
     height: 100%;
     background-image: url({{ mobile_image | img_url: 'master' }});
     background-size: cover;
+    
     filter: blur({{ blur_amount }}px);
   "></div>
 
