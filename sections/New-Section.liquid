@@ -1,0 +1,59 @@
+<div class="page-width">
+<div class="new">
+ <p> {{ section.settings.mytext }}</p>
+</div>
+  
+{% for block in section.blocks %}
+<div class="pickimage">
+ {{
+            block.settings.myimg
+            | image_url: width: 500
+            | image_tag: loading: 'lazy', sizes: sizes, widths: widths
+          }}
+</div>
+  <p> {{ block.settings.tex }}</p>
+ {% endfor %}
+ 
+</div>
+{% schema %}
+  {
+    "name": "text",
+    "settings": [
+      {
+        "type":"text",
+        "id": "mytext",
+        "label":"heading"
+      }
+    ],
+    "blocks":[
+      {
+      "name":"image",
+        "type": "image",
+         "settings": [
+      {
+        "type":"image_picker",
+         "id": "myimg",
+        "label":"choose your image"
+      },
+           {
+        "type":"text",
+        "id": "tex",
+        "label":"heading"
+      }
+         ]
+      }
+    ],
+    "presets":[
+      {
+        "name":"text",
+        "category":"text"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

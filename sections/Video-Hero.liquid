@@ -1,0 +1,153 @@
+<style>
+  .video-height-ar{
+    
+   height: 100vh;
+    object-fit:cover;
+    width:100%;
+    object-position:top;
+  }
+  .vid-wrapper-ar{
+    position:relative;
+  }
+  .pos-abs-ar{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .btn-vid {
+    margin-top: 30px;
+}
+  .wrapper-text-ar-vid{
+    max-width:600px;
+    margin:0 auto;
+    position:relative;
+    top: 50%;
+  transform: translateY(-50%);
+  }
+  .title-vid-ar{
+color:white;
+    font-size:3em;
+  }
+   .description-vid-ar{
+     color:white;
+     font-size:18px;
+   }
+  .new-button-ar-{{ section.id }} a{
+    padding:15px 25px;
+    color:white;
+    background:{{ settings.color-scheme }};
+    border-radius:30px;
+    font-weight:bold;
+     display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    animation: zoom-in-outss 2.5s infinite;
+    max-width:80%;
+    margin:0 auto;
+     margin-top:30px;
+  }
+  .new-button-ar-{{ section.id }} a:hover{
+    color: black;
+    background: white;
+  }
+  .new-button-ar-{{ section.id }}{
+margin-top:30px;
+  }
+  @keyframes zoom-in-outss {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  @media screen and (max-width:767px){
+    .video-height-ar{
+    max-height:500px;
+min-height:470px;
+    }
+.wrapper-text-ar-vid {
+}
+     .new-button-ar-{{ section.id }} a{
+       margin:0 auto;
+     }
+  }
+</style>
+<div class="wrapper-vid-ar">
+<div style="text-align:center;">
+{% if section.settings.video-ar != blank %}
+  <div class="vid-wrapper-ar" style="text-align:center;">
+ <video class="video-height-ar" style="display:block; margin: 0 auto; width:100%; " loop autoplay muted playsinline  data-wf-ignore="true" data-object-fit="cover">
+    <source src="{{ section.settings.video-ar }}" data-wf-ignore="true" type="video/mp4" />
+   </video>
+<div class="pos-abs-ar">
+  <div class="wrapper-text-ar-vid">
+    <div class="title-vid-ar">
+{{ section.settings.title-ar }}
+    </div>
+    <div class="description-vid-ar">
+    <p>  {{ section.settings.description-ar }}</p>
+    </div>
+    <div class="btn-vid">
+            <a href="{{ section.settings.link }}" class="button button--primary">
+              {{ section.settings.link_text }}
+            </a>
+          </div>
+  </div>
+</div>
+  </div>
+  {% endif %}
+</div>
+</div>
+{% schema %}
+  {
+    "name": "Video Banner",
+	"class": "video-banner",
+    "settings": [
+	{
+  "type": "text",
+  "id": "video-ar",
+  "label": "Video URL mp4",
+  "default": "mp4 Video URL"
+},
+      {
+  "type": "text",
+  "id": "title-ar",
+  "label": "Video Title",
+  "default": "Premium Quality"
+},
+        {
+  "type": "text",
+  "id": "description-ar",
+  "label": "Video Details",
+  "default": "Premium Quality"
+},
+                {
+            "type": "url",
+            "id": "link",
+            "label": "Button link"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Button text",
+            "default": "Button"
+          }
+    ],
+	"presets": [
+		{
+		  "name": "Video Banner",
+		  "blocks":[
+				
+			]
+		}
+	]
+  }
+{% endschema %}
